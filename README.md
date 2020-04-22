@@ -27,7 +27,7 @@ python search.py
 ## Contributing
 
 ## Versioning
-1.0
+1.5
 
 ## Author
 Matteo Moretti
