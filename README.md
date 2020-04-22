@@ -1,6 +1,7 @@
 # Google batch scraper
 
-Simple script to scrape Google using `requests` and `bs4`.
+A simple script to scrape Google using `requests` and `bs4`.
+Current version scrapes research-results count from a CSV file which lists some Google Search queries.
 
 ## Getting Started
 
