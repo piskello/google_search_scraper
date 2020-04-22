@@ -24,7 +24,6 @@ pip install -r requirements.txt
 # modify query in search.py and run script
 python search.py
 ```
-## Contributing
 
 ## Versioning
 1.5
@@ -32,6 +31,4 @@ python search.py
 ## Author
 Matteo Moretti
 
-## License
 
-## Acknowledgments
