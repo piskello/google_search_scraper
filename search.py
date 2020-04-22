@@ -4,13 +4,14 @@ from bs4 import BeautifulSoup
 from datetime import date
 from datetime import datetime
 from datetime import timedelta
+import time
 
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"}
 
 #Definisco i dati pr la ricerca
 ricerca="'paura' covid coronavirus"
-startDate = date(2020, 4, 1)
-endDate = date(2020, 4, 5)
+startDate = date(2020, 2, 1)
+endDate = date(2020, 4, 22)
 
 #coversione per la query di ricerca
 deltaDate=endDate-startDate
@@ -20,6 +21,7 @@ print("From: " + startDate.strftime("%d/%m/%Y")+" to: "+endDate.strftime("%d/%m/
 
 for i in range(deltaDate.days+1):
     #compongo query di ricerca
+  
     qHeader="https://www.google.com/search?q="
     qText=ricerca.replace("'","%22").replace(" ","+")
     qTimestamp="&safe=active&sxsrf=ALeKk02GfGyt6J2O2C16qAgaIQHUaTO2tw%3A1587473771795"
@@ -35,4 +37,7 @@ for i in range(deltaDate.days+1):
     total_results_text = soup.find("div", {"id": "result-stats"}).find(text=True, recursive=False) 
     results_num = ''.join([num for num in total_results_text if num.isdigit()])
     print(startDate.strftime("%m/%d/%Y")+ " " +results_num)
-    startDate+=timedelta(i)
+    #print (result.content)
+    time.sleep(5)
+    startDate+=timedelta(1)
+    
