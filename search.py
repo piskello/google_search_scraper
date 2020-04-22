@@ -36,7 +36,7 @@ for i in range(deltaDate.days+1):
     soup = BeautifulSoup(result.content, 'html.parser')
     total_results_text = soup.find("div", {"id": "result-stats"}).find(text=True, recursive=False) 
     results_num = ''.join([num for num in total_results_text if num.isdigit()])
-    print(startDate.strftime("%m/%d/%Y")+ " " +results_num)
+    print(startDate.strftime("%d/%m/%Y")+ " " +results_num)
     #print (result.content)
     time.sleep(5)
     startDate+=timedelta(1)
